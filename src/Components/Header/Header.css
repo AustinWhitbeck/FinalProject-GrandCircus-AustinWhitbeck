@@ -1,0 +1,17 @@
+
+/* main container */
+header.Header {
+    /* border */
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* spacing */
+    padding: 5px 15px;
+}
+
+
+

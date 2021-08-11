@@ -1,0 +1,26 @@
+
+/* main container */
+section.StartScreenContainer {
+    /* border */
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    /* spacing */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* size */
+    height: 80vh;
+}
+
+/* Inner Window, Start Options */
+section.StartScreenContainer main.MainStartWindow {
+    /* spacing  */
+    display: flex;
+    flex-direction: column;
+}
+
+
+
