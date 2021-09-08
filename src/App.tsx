@@ -4,6 +4,7 @@ import CharacterSelect from './Components/CharacterSelect/CharacterSelect';
 import Header from './Components/Header/Header';
 
 import StartScreen from './Components/StartScreen/StartScreen';
+import { ItemContextProvider } from './ContextProviders/ClassListContext';
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
               </Route>
 
               <Route path="/CharacterSelect" exact>
-                  <CharacterSelect/>
+                  <ItemContextProvider>
+                    <CharacterSelect/>
+                  </ItemContextProvider>
               </Route>
           </Switch> 
       </Router>

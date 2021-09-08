@@ -1,69 +1,45 @@
 import { createContext, ReactNode, useState } from "react"
+import {Class} from "../Model/Interfaces";
 
 
 //**  Interfaces  **//
 
 export interface ClassList {
-    classes: Class[]
+    masterClassList: Class[]
 }
 
-
-export interface Class {
-    name: string;
-    physAttack: number;
-    magAttack: number;
-    physDefense: number;
-    magDefense: number;
+const defaultClasses: ClassList = {
+    masterClassList: []
 }
 
-//** Default Value  **//
-
-const classMasterList: Class[] = [
-    {
-        name: "Figher",
-        physAttack: 5,
-        magAttack: 0,
-        physDefense: 4,
-        magDefense: 2
-    },
-    {
-        name: "Figher",
-        physAttack: 5,
-        magAttack: 0,
-        physDefense: 4,
-        magDefense: 2
-    }
-]
-
-const defaultValue: Class[] = [
-    {
-        name: "Figher",
-        physAttack: 5,
-        magAttack: 0,
-        physDefense: 4,
-        magDefense: 2
-    },
-    {
-        name: "Figher",
-        physAttack: 5,
-        magAttack: 0,
-        physDefense: 4,
-        magDefense: 2
-    }
-];
-
-export const ItemContext = createContext(defaultValue)
+export const ClassListContext = createContext(defaultClasses)
 
 
 export const ItemContextProvider = ({children}: {children: ReactNode}) => {
 
-    const [masterClassList, setMasterClassList] = useState<Class[]>(defaultValue);
+    const [masterClassList, setMasterClassList] = useState<Class[]>([
+        {
+            name: "Fighter",
+            health: 14,
+            physAttack: 5,
+            magAttack: 0,
+            physDefense: 4,
+            magDefense: 2
+        },
+        {
+            name: "Wizard",
+            health: 10,
+            physAttack: 2,
+            magAttack: 4,
+            physDefense: 1,
+            magDefense: 4
+        }
+    ]);
 
-    
 
 
-return (<ItemContext.Provider value={ masterClassList }>
+return (<ClassListContext.Provider value={ {masterClassList} }>
     {children}
-</ItemContext.Provider>)
+</ClassListContext.Provider>)
 
 };
